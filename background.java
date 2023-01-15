@@ -11,6 +11,7 @@ public class background extends World
     public int score = 0;
     Label scoreLabel;
     int level = 1;
+    int H = 0;
     
     /**
      * Constructor for objects of class background.
@@ -38,6 +39,7 @@ public class background extends World
     public void increaseScore()
     {
         score ++;
+        H++;
         scoreLabel.setValue(score);
         
         if(score % 5 == 0)
@@ -53,10 +55,10 @@ public class background extends World
         {
             addObject(new eat(), Greenfoot.getRandomNumber(1920), Greenfoot.getRandomNumber(900));
         }
-        if(score == 10)
+        if(H == 10)
         {
             addObject(new sprite(),1920,Greenfoot.getRandomNumber(500));
-            score=0;
+            H = 0;
         }
     }
 }
